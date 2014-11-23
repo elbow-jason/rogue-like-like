@@ -1,0 +1,22 @@
+{
+  "name": "rogue-like-like",
+  "version": "0.0.1",
+  "description": "A rogue-like-like game that connects to rick and jason's rust-fun",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jlgoldb2/rogue-like-like.git"
+  },
+  "keywords": [
+    "rogue-like"
+  ],
+  "author": "Jason Goldberger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jlgoldb2/rogue-like-like/issues"
+  },
+  "homepage": "https://github.com/jlgoldb2/rogue-like-like"
+}
