@@ -177,7 +177,7 @@ var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments)
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.context.font = "10pt Calibri";
         this.context.fillStyle = "black";
-        this.context.fillText(message, 5, 10);
+        this.context.fillText(message, 5, 12);
       };
 
       return MouseTracker;

@@ -23,7 +23,7 @@
         @context.clearRect 0, 0, @canvas.width, @canvas.height
         @context.font = "10pt Calibri"
         @context.fillStyle = "black"
-        @context.fillText message, 5, 10
+        @context.fillText message, 5, 12
         return
     return MouseTracker
 
