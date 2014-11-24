@@ -215,7 +215,7 @@ var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments)
         canvas = element[0];
         context = canvas.getContext('2d');
         mouse = new MouseTracker(canvas, context);
-        grid = new GridMaker(context, boardConfig.xLimit, boardConfig.yLimit);
+        grid = new GridMaker(context);
         grid.drawLine(0, 0, 25, 25);
       }
     };

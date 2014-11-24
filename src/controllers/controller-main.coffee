@@ -6,4 +6,4 @@
     $scope.board = boardConfig
     return
 
-    ) angular, rogueLikeLike
+) angular, rogueLikeLike

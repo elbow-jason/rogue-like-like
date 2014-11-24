@@ -10,7 +10,7 @@
         canvas = element[0];
         context = canvas.getContext('2d');
         mouse = new MouseTracker(canvas, context);
-        grid = new GridMaker(context, boardConfig.xLimit, boardConfig.yLimit);
+        grid = new GridMaker(context);
         grid.drawLine(0, 0, 25, 25);
       }
     };
