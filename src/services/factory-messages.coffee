@@ -1,37 +1,41 @@
 
 ( (ng, app)->
   'use strict'
-  app.factory "MessageFactory", ($log)->
+  app.factory 'MessageFactory', ($log)->
     class MessageFactory
       add: (msg) ->
         @scope.$apply ()=>
           this.messages.push msg
+          return
         return
 
       setupWebsocketMethods: ()->
         @ws.onopen = =>
-          $log.info "onopen called", "CONNECT"
-          @add "CONNECT"
+          $log.info 'onopen called', 'CONNECT'
+          @add 'CONNECT'
           return
 
         @ws.onclose = =>
-          $log.info "onclose called", "DISCONNECT"
-          @add "DISCONNECT"
+          $log.info 'onclose called', 'DISCONNECT'
+          @add 'DISCONNECT'
           return
 
         @ws.onmessage = (event) =>
-          $log.info "onmessage called",  "MESSAGE: " + event.data
-          @add "MESSAGE: " + event.data
+          $log.info 'onmessage called',  'MESSAGE: ' + event.data
+          @add 'MESSAGE: ' + event.data
           return
 
         @ws.onerror = (err)->
-          $log.info "WEBSOCKET ERROR", err
+          $log.info 'WEBSOCKET ERROR', err
+          return
+        return
 
       constructor: (@scope)->
         @messages = []
-        @ws = new WebSocket("ws://localhost:8080/")
+        @ws = new WebSocket('ws://localhost:8080/')
         @setupWebsocketMethods()
-        $log.info "MessageFactory constructed"
+        $log.info 'MessageFactory constructed'
+        return
 
     return MessageFactory
 

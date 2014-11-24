@@ -2,3 +2,9 @@
 var rogueLikeLike;
 
 rogueLikeLike = angular.module('rogueLikeLike', []);
+
+rogueLikeLike.value('boardConfig', {
+  xLimit: 512,
+  yLimit: 512,
+  spacing: 8
+});
