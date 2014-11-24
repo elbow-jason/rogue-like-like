@@ -27,7 +27,7 @@ gulp.task "sass", ->
  */
 
 gulp.task("scripts", function() {
-  return gulp.src(["src/*.js", "src/services/*.js", "src/controller/*.js"]).pipe(concat("rogue-like-like.js")).pipe(gulp.dest("dist")).pipe(rename("rogue-like-like.min.js")).pipe(uglify()).pipe(gulp.dest("dist"));
+  return gulp.src(["src/*.js", "src/services/*.js", "src/controllers/*.js"]).pipe(concat("rogue-like-like.js")).pipe(gulp.dest("dist")).pipe(rename("rogue-like-like.min.js")).pipe(uglify()).pipe(gulp.dest("dist"));
 });
 
 gulp.task("watch", function() {

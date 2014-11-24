@@ -25,7 +25,7 @@ gulp.task "sass", ->
 
 # Concatenate & Minify JS
 gulp.task "scripts", ->
-  gulp.src(["src/*.js", "src/services/*.js", "src/controller/*.js"])
+  gulp.src(["src/*.js", "src/services/*.js", "src/controllers/*.js"])
     .pipe(concat("rogue-like-like.js"))
     .pipe(gulp.dest("dist"))
     .pipe(rename("rogue-like-like.min.js"))

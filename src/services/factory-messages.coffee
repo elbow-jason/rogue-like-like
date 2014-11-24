@@ -3,7 +3,7 @@
   'use strict'
   app.factory "MessageFactory", ($log)->
     class MessageFactory
-      log: (msg) ->
+      add: (msg) ->
         @scope.$apply ()=>
           this.messages.push msg
         return
@@ -11,17 +11,17 @@
       setupWebsocketMethods: ()->
         @ws.onopen = =>
           $log.info "onopen called", "CONNECT"
-          @log "CONNECT"
+          @add "CONNECT"
           return
 
         @ws.onclose = =>
           $log.info "onclose called", "DISCONNECT"
-          @log "DISCONNECT"
+          @add "DISCONNECT"
           return
 
         @ws.onmessage = (event) =>
           $log.info "onmessage called",  "MESSAGE: " + event.data
-          @log "MESSAGE: " + event.data
+          @add "MESSAGE: " + event.data
           return
 
         @ws.onerror = (err)->
@@ -29,12 +29,9 @@
 
       constructor: (@scope)->
         @messages = []
-        @log "WTF CUH"
         @ws = new WebSocket("ws://localhost:8080/")
-        $log.info "@ws = ", @ws
         @setupWebsocketMethods()
-        # setup websocket with callbacks
-
+        $log.info "MessageFactory constructed"
 
     return MessageFactory
 

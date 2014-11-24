@@ -4,7 +4,7 @@
   return app.factory("MessageFactory", function($log) {
     var MessageFactory;
     MessageFactory = (function() {
-      MessageFactory.prototype.log = function(msg) {
+      MessageFactory.prototype.add = function(msg) {
         this.scope.$apply((function(_this) {
           return function() {
             return _this.messages.push(msg);
@@ -16,19 +16,19 @@
         this.ws.onopen = (function(_this) {
           return function() {
             $log.info("onopen called", "CONNECT");
-            _this.log("CONNECT");
+            _this.add("CONNECT");
           };
         })(this);
         this.ws.onclose = (function(_this) {
           return function() {
             $log.info("onclose called", "DISCONNECT");
-            _this.log("DISCONNECT");
+            _this.add("DISCONNECT");
           };
         })(this);
         this.ws.onmessage = (function(_this) {
           return function(event) {
             $log.info("onmessage called", "MESSAGE: " + event.data);
-            _this.log("MESSAGE: " + event.data);
+            _this.add("MESSAGE: " + event.data);
           };
         })(this);
         return this.ws.onerror = function(err) {
@@ -39,10 +39,9 @@
       function MessageFactory(scope) {
         this.scope = scope;
         this.messages = [];
-        this.log("WTF CUH");
         this.ws = new WebSocket("ws://localhost:8080/");
-        $log.info("@ws = ", this.ws);
         this.setupWebsocketMethods();
+        $log.info("MessageFactory constructed");
       }
 
       return MessageFactory;
