@@ -1,3 +1,3 @@
 
 #init the app
-rogueLikeLike = angular.module "rogueLikeLike", []
+rogueLikeLike = angular.module 'rogueLikeLike', []
