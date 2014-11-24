@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<body ng-app="rogueLikeLike">
+    <head>
+        <title>Rogue Like Like</title>
+        <meta charset="UTF-8" />
+        <link rel="shortcut icon" type="image/png" href="/crap_sword.png"/>
+    </head>
+    <h1>ROGUE LIKE LIKE</h1>
+     <canvas id="game">
+
+     </canvas>
+    <div ng-controller="MessagesController">
+        <pre ng-repeat="msg in view.messages">{{ msg }}</pre>
+    </div>
+    <div ng-init="viewRawData=false">
+      <button ng-click="viewRawData = !(viewRawData)"> View Raw Data {{ viewRawData }}</button>
+
+
+
+      <span ng-show="viewRawData">
+          <pre>{{ view | json }}</pre>
+      </span>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+    <script src="/dist/rogue-like-like.js"></script>
+</body>
