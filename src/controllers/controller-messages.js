@@ -2,7 +2,6 @@
 (function(ng, app) {
   'use strict';
   return app.controller("MessagesController", function($scope, $log, MessageFactory) {
-    $scope.view = new MessageFactory($scope);
-    return $log.info("MessagesController is up");
+    return $scope.view = new MessageFactory($scope);
   });
 })(angular, rogueLikeLike);

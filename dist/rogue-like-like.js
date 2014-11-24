@@ -61,6 +61,7 @@ rogueLikeLike = angular.module('rogueLikeLike', []);
   'use strict';
   return app.controller("MessagesController", function($scope, $log, MessageFactory) {
     $scope.view = new MessageFactory($scope);
-    return $log.info("MessagesController is up");
+    $log.info("MessagesController is up");
+    return $log.info("$scope", $scope);
   });
 })(angular, rogueLikeLike);
