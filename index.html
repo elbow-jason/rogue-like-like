@@ -1,33 +1,54 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+    <title>Tutorial</title>
+    body, html {
+        margin:0;
+        padding: 0;
+        overflow:hidden;
+        font-family:Arial;
+        font-size:20px
+    }
 
-<body ng-app="rogueLikeLike">
-    <head>
-        <title>Rogue Like Like</title>
-        <meta charset="UTF-8" />
-        <link rel="icon" type="image/png" href="/images/crap_sword.png" />
-    </head>
-    <div ng-controller="MainController">
-        <h1>ROGUE LIKE LIKE</h1>
+    #cr-stage {
+        border:2px solid black;
+        margin:5px auto;
+        color:white
+    }
+    </style>
+</head>
+<body>
 
-        <canvas width="{{ board.xLimit }}" height="{{ board.yLimit }}" game-board  style="border:1px solid black">
-        </canvas>
-        <div ng-controller="MessagesController">
-            <pre ng-repeat="msg in view.messages">{{ msg }}</pre>
-            <div ng-init="viewRawData=false">
-                <button ng-click="viewRawData = !(viewRawData)"> View Raw Data: {{ viewRawData }}</button>
-                <span ng-show="viewRawData">
-                    <pre>"view": {{ view | json }}</pre>
-                    <pre>"board": {{ board | json }}</pre>
-                </span>
-            </div>
-        </div>
-    </div>
-      <canvas id="myCanvas" width="578" height="200"></canvas>
-    <script>
 
-    </script>
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
-    <script src="/dist/rogue-like-like.js"></script>
+<script type="text/javascript" src="http://craftyjs.com/release/0.5.3/crafty-min.js"></script>
+<script type="text/javascript" src="src/crafty-game.js"></script>
+<script type="text/javascript" src="src/crafty-component.js"></script>
 </body>
+</html>
+
+<!--
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Transform Transitions</title>
+<style>
+
+body {
+  margin: 50px;
+}
+
+rect {
+  stroke: #fff;
+  stroke-width: .1px;
+}
+
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="src/d3app.js"></script>
+<script>
+
+
+</script>
+-->
