@@ -24,8 +24,10 @@ Game =
 
   generateTiles:()->
     #...(triple dot) is exclusive
-    for x in [0...Game.grid.width]
-      for y in [0...Game.grid.height]
+    widthArray  = [0...Game.grid.width]
+    heightArray = [0...Game.grid.height]
+    for x in widthArray
+      for y in heightArray
         if Game.atEdge x, y
           Game.placeEdge x, y
         #else

@@ -27,23 +27,35 @@ Game = {
     };
   },
   generateTiles: function() {
-    var x, y, _i, _ref, _results;
-    _results = [];
-    for (x = _i = 0, _ref = Game.grid.width; 0 <= _ref ? _i < _ref : _i > _ref; x = 0 <= _ref ? ++_i : --_i) {
-      _results.push((function() {
-        var _j, _ref1, _results1;
-        _results1 = [];
-        for (y = _j = 0, _ref1 = Game.grid.height; 0 <= _ref1 ? _j < _ref1 : _j > _ref1; y = 0 <= _ref1 ? ++_j : --_j) {
+    var heightArray, widthArray, x, y, _i, _j, _k, _len, _ref, _ref1, _results, _results1, _results2;
+    widthArray = (function() {
+      _results = [];
+      for (var _i = 0, _ref = Game.grid.width; 0 <= _ref ? _i < _ref : _i > _ref; 0 <= _ref ? _i++ : _i--){ _results.push(_i); }
+      return _results;
+    }).apply(this);
+    heightArray = (function() {
+      _results1 = [];
+      for (var _j = 0, _ref1 = Game.grid.height; 0 <= _ref1 ? _j < _ref1 : _j > _ref1; 0 <= _ref1 ? _j++ : _j--){ _results1.push(_j); }
+      return _results1;
+    }).apply(this);
+    _results2 = [];
+    for (_k = 0, _len = widthArray.length; _k < _len; _k++) {
+      x = widthArray[_k];
+      _results2.push((function() {
+        var _l, _len1, _results3;
+        _results3 = [];
+        for (_l = 0, _len1 = heightArray.length; _l < _len1; _l++) {
+          y = heightArray[_l];
           if (Game.atEdge(x, y)) {
-            _results1.push(Game.placeEdge(x, y));
+            _results3.push(Game.placeEdge(x, y));
           } else {
-            _results1.push(void 0);
+            _results3.push(void 0);
           }
         }
-        return _results1;
+        return _results3;
       })());
     }
-    return _results;
+    return _results2;
   },
   width: function() {
     return this.grid.width * this.grid.tile.width;

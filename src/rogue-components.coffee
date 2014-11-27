@@ -46,7 +46,13 @@ Crafty.c "Agent",
     @requires("Actor, Fourway, Color, Collision")
       .fourway(4)
       .stopOnSolids()
-      .color "rgb(20, 75, 40)"
+      .color("rgb(20, 75, 40)")
+      .bind("KeyUp", (evt) =>
+        console.log "keyup", evt, {x: @x, y:@y}
+      ).bind("Move", (evt) =>
+        console.log "move:", evt
+      )
+    console.log  "Agent:", @._movement
     return
   stopOnSolids:->
     @onHit 'Solid', @stopMovement

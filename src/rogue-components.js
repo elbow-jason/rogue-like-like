@@ -42,7 +42,19 @@ Crafty.c("Bush", {
 
 Crafty.c("Agent", {
   init: function() {
-    this.requires("Actor, Fourway, Color, Collision").fourway(4).stopOnSolids().color("rgb(20, 75, 40)");
+    this.requires("Actor, Fourway, Color, Collision").fourway(4).stopOnSolids().color("rgb(20, 75, 40)").bind("KeyUp", (function(_this) {
+      return function(evt) {
+        return console.log("keyup", evt, {
+          x: _this.x,
+          y: _this.y
+        });
+      };
+    })(this)).bind("Move", (function(_this) {
+      return function(evt) {
+        return console.log("move:", evt);
+      };
+    })(this));
+    console.log("Agent:", this._movement);
   },
   stopOnSolids: function() {
     this.onHit('Solid', this.stopMovement);
