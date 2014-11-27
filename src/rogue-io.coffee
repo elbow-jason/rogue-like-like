@@ -14,7 +14,7 @@ Game.io.ws.onclose = (evt)=>
   return evt
 
 Game.io.ws.onmessage = (evt) =>
-  console.lo g "message on socket", evt
+  console.log "message on socket", evt
   return evt
 
 Game.io.ws.onerror = (evt)->
