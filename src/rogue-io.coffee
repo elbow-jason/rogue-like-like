@@ -15,10 +15,12 @@ Game.io.ws.onclose = (evt)=>
 
 Game.io.ws.onmessage = (evt) =>
   console.log "message on socket", evt
+  console.log "message data on socket", evt.data
   return evt
 
 Game.io.ws.onerror = (evt)->
   console.log 'WEBSOCKET ERROR', evt
   return evt
+
 
 

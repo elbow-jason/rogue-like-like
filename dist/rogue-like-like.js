@@ -156,8 +156,6 @@ Game = {
   }
 };
 
-window.addEventListener('load', Game.start);
-
 
 /*
 
@@ -374,6 +372,7 @@ Game.io.ws.onclose = (function(_this) {
 Game.io.ws.onmessage = (function(_this) {
   return function(evt) {
     console.log("message on socket", evt);
+    console.log("message data on socket", evt.data);
     return evt;
   };
 })(this);
